@@ -32,12 +32,25 @@ class ongkirKu:
   def setCity(self, x):
     self._city = x
 
-  def search():
-    print()
+ def viewList(self):
+    for i in dataCity['rajaongkir']['results']:
+      print(f"{i['province']} ({i['province_id']})")
+      for j in dataCity['rajaongkir']['results']:
+        if(i['province_id'] == j['province_id']):
+          print(f"City\t\t: {j['city_name']}")
+          print(f"Postal Code\t: {j['postal_code']}")
+          print(f"City ID\t\t: {j['city_id']}")
+          print("\n")
+      print('\n')
 
-  def viewList():
-    print()
-
+  def search(self):
+    for i in dataCity['rajaongkir']['results']:
+      if(i['city_name'] == self._city):
+        print(f"City\t\t: {i['city_name']}")
+        print(f"Postal Code\t: {i['postal_code']}")
+        print(f"City ID\t\t: {i['city_id']}")
+        print("\n")
+        
   def cekOngkir(self):
     json = {
       'origin': self._fromID,
