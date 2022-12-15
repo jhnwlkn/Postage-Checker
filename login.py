@@ -21,7 +21,7 @@ def login(username,password):
         
     else:
         print("-"*70)
-        print("   Username tidak terdaftar, silahkan daftar terlebih dahulu!!!")
+        print("    Username/Password Salah !!!")
         print("-"*70)
         time.sleep(3)
         os.system('cls')
